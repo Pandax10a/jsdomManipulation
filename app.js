@@ -8,9 +8,16 @@ header_text[`style`][`backgroundColor`] = 'orange';
 
 // using querySelectorAll() replacing p tag content
 
-let p_text = document.querySelectorAll(`.for_main`);
-p_text[`innerHTML`] = `replacing original`;
+let p_text = document.querySelectorAll(`h3`);
+for (let i = 0;i<p_text.length;i++) {
+p_text[i][`innerHTML`] = ` <h4>replacing original</h4>`;
+}
 
 // using getElementsByClassName() content before current content
 let p_all = document.getElementsByClassName(`for_p`);
-p_all[`outerHTML`] = `<inline>this is before</inline>` + p_all[`outerHTML`];
+for (let i = 0; i<p_all.length;i++) {
+p_all[i][`outerHTML`] = `<inline>this is before lorem ipsum</inline>` + p_all[i][`outerHTML`];
+}
+
+// cleared everything to show one message
+document.body[`outerHTML`] = `<h1>Wiped everything from here</h1>`
